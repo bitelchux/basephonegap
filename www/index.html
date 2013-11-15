@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+        <head>
+        <meta charset="utf-8">
+        <title>PhoneGap Template</title>
+                <script type="text/javascript" src="phonegap.js"></script>
+                <script type="text/javascript" src="jq.js"></script>                
+                <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+                <meta name="apple-mobile-web-app-capable" content="yes"/>
+<style>
+	html, body {margin:0; padding:0; height:90%}
+	*{
+		-moz-user-select: -moz-none;
+		-khtml-user-select: none;
+		-webkit-user-select: none;
+
+		-o-user-select: none;
+		user-select: none;
+		font-family: verdana,helvetica,arial,sans-serif;
+	}
+	body{
+		background-color:white;
+		color:gray;
+	}
+	.megaboton:hover, .megaboton:focus {
+		color: #dfe7ea;
+		-webkit-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
+		-moz-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
+		box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
+	}
+	.megaboton {
+		width: 500px;
+		background: #3e9cbf;
+		padding: 8px 14px 10px;
+		border: 1px solid #3e9cbf;
+		cursor: pointer;
+		font-size: 1.5em;
+		letter-spacing: .1em;
+		text-shadow: 0 -1px 0px rgba(0, 0, 0, 0.3);
+		color: #fff;
+		-webkit-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 5px 0px 0px #205c73, 0px 10px 5px #999;
+		-moz-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 5px 0px 0px #205c73, 0px 10px 5px #999;
+		box-shadow: inset 0px 1px 0px #3e9cbf, 0px 5px 0px 0px #205c73, 0px 10px 5px #999;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+		border-radius: 10px;
+	}	
+</style>
+<script>
+var deviceHeading, deviceName, deviceVersion;
+document.addEventListener("deviceready", onDeviceReady, false);
+function alertDismissed() {
+        // do something
+}
+function showAlert(txt) {
+        navigator.notification.alert(
+            txt,  // message
+            alertDismissed,         // callback
+            'Info',            // title
+            'Ok'                  // buttonName
+        );
+}
+function onDeviceReady() {
+        showAlert("cargado");
+        if (checkConnection()){
+                onOnline();
+        }else{
+                onOffline();
+        }
+}
+
+$(document).ready(function () {
+
+    resize();
+  
+});
+
+function resize(){
+        screenw=$(window).width()-2;
+        screenh=$(window).height()-2;               
+}
+document.addEventListener("online", onOnline, false);
+document.addEventListener("offline", onOffline, false);
+function onOnline(){
+	document.location.href="http://tvgrid.info";
+}
+function onOffline(){
+	$("#nocon").show();
+}
+function checkConnection() {
+    var networkState = navigator.network.connection.type;
+
+    var states = {};
+    states[Connection.UNKNOWN]  = 'Unknown connection';
+    states[Connection.ETHERNET] = 'Ethernet connection';
+    states[Connection.WIFI]     = 'WiFi connection';
+    states[Connection.CELL_2G]  = 'Cell 2G connection';
+    states[Connection.CELL_3G]  = 'Cell 3G connection';
+    states[Connection.CELL_4G]  = 'Cell 4G connection';
+    states[Connection.NONE]     = 'No network connection';
+
+    alert('Connection type: ' + states[networkState]);
+if (networkState==Connection.NONE){
+return false;
+}
+return true;
+}
+
+document.addEventListener("backbutton", function(e){
+        e.preventDefault();
+        showConfirm();
+}, false);
+// process the confirmation dialog result
+function onConfirm(buttonIndex) {
+    alert('You selected button ' + buttonIndex);
+        navigator.app.exitApp();
+}
+
+// Show a custom confirmation dialog
+//
+function showConfirm() {
+    navigator.notification.confirm(
+        'You are the winner!',  // message
+        onConfirm,              // callback to invoke with index of button pressed
+        'Game Over',            // title
+        'Restart,Exit'          // buttonLabels
+    );
+}
+
+function reload(){
+	location.reload();
+}
+</script>
+</head>
+        <body>
+<div id="nocon" style="display:block;text-align:center">
+<br/><br/><br/>
+<h2>This app requires an internet connection</h2>
+<h2>Active your internet connection and start the app again</h2>
+<input type="button" class="megaboton" value="Retry" onclick="reload()"/>
+</div>
+        </body>
+</html>
