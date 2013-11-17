@@ -85,6 +85,7 @@ function onOnline(){
 	document.location.href="http://tvgrid.info";
 }
 function onOffline(){
+	$("loading").hide();
 	$("#nocon").show();
 }
 function checkConnection() {
@@ -133,7 +134,12 @@ function reload(){
 </script>
 </head>
         <body>
-<div id="nocon" style="display:block;text-align:center">
+        <div id="loading" style="display:block;text-align:center">
+        <br/><br/><br/>
+	<h2>Loading, please wait</h2>
+        <img src="loading.png"/>
+        </div>
+<div id="nocon" style="display:none;text-align:center">
 <br/><br/><br/>
 <h2>This app requires an internet connection</h2>
 <h2>Active your internet connection and start the app again</h2>
