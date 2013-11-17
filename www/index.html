@@ -61,7 +61,7 @@ function showAlert(txt) {
         );
 }
 function onDeviceReady() {
-        showAlert("cargado");
+       // showAlert("cargado");
         if (checkConnection()){
                 onOnline();
         }else{
@@ -100,7 +100,7 @@ function checkConnection() {
     states[Connection.CELL_4G]  = 'Cell 4G connection';
     states[Connection.NONE]     = 'No network connection';
 
-    alert('Connection type: ' + states[networkState]);
+   // alert('Connection type: ' + states[networkState]);
 if (networkState==Connection.NONE){
 return false;
 }
@@ -113,7 +113,7 @@ document.addEventListener("backbutton", function(e){
 }, false);
 // process the confirmation dialog result
 function onConfirm(buttonIndex) {
-    alert('You selected button ' + buttonIndex);
+  //  alert('You selected button ' + buttonIndex);
         navigator.app.exitApp();
 }
 
@@ -137,7 +137,7 @@ function reload(){
         <div id="loading" style="display:block;text-align:center">
         <br/><br/><br/>
 	<h2>Loading, please wait</h2>
-        <img src="loading.png"/>
+        <img src="loading.gif"/>
         </div>
 <div id="nocon" style="display:none;text-align:center">
 <br/><br/><br/>
