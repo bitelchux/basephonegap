@@ -3,13 +3,13 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.delasource.ghostshunter"
-        version   = "1.0.0">
+        id        = "com.botijonline.TVGuide"
+        version   = "2.0.0">
 
-    <name>ghosts hunter</name>
+    <name>Today on tv</name>
 
     <description>
-        ghosts hunter html5 game
+        Today on tv
     </description>
 
     <author href="http://delasource.info" email="bitelchux@yahoo.es">
