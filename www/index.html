@@ -47,18 +47,11 @@
 	}	
 </style>
 <script>
-var pais="";
 var deviceHeading, deviceName, deviceVersion;
 document.addEventListener("deviceready", onDeviceReady, false);
 function alertDismissed() {
         // do something
 }
-function checkLocale() {
-      navigator.globalization.getLocaleName(
-        function (locale) {pais= locale.value);},
-        function () {pais="";}
-      );
-    }
 function showAlert(txt) {
         navigator.notification.alert(
             txt,  // message
@@ -89,12 +82,7 @@ function resize(){
 document.addEventListener("online", onOnline, false);
 document.addEventListener("offline", onOffline, false);
 function onOnline(){
-	checkLocale();
-	alert(pais)
-	if (pais=="ES")
-		document.location.href="http://hoyenlatele.info/";
-	else
-		document.location.href="http://tvgrid.info";
+	document.location.href="http://tvgrid.info";
 }
 function onOffline(){
 	
