@@ -16,22 +16,29 @@
 
 		-o-user-select: none;
 		user-select: none;
-		font-family: verdana,helvetica,arial,sans-serif;
+		font-family: -apple-system-font,"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+		border: 0;
+		font-size: 100%;
+		color: black;
+		vertical-align: baseline;
 	}
 	body{
 		background-color:white;
 		color:gray;
 	}
-	.megaboton:hover, .megaboton:focus {
-		color: #dfe7ea;
-		-webkit-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
-		-moz-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
-		box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
-	}
+.megaboton:hover, .megaboton:focus {
+color: #dfe7ea;
+text-decoration:none;
+-webkit-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
+-moz-box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
+box-shadow: inset 0px 1px 0px #3e9cbf, 0px 2px 0px 0px #205c73, 0px 2px 5px #999;
+}
 	.megaboton {
-		width: 500px;
+		min-width: 35px;
+		padding-left: 12px;
+		padding-right: 12px;
+		text-decoration: none;
 		background: #3e9cbf;
-		padding: 8px 14px 10px;
 		border: 1px solid #3e9cbf;
 		cursor: pointer;
 		font-size: 1.5em;
