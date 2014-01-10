@@ -52,15 +52,16 @@
 
     <!-- Define app icon for each platform. -->
     <icon src="imgs/tv/icon.png" />
-	<!--
-    <icon src="imgs/tv/57x57.png"            gap:platform="ios"        width="57" height="57" />
-    <icon src="imgs/tv/72x72.png"            gap:platform="ios"        width="72" height="72" />
+	
+    <icon src="imgs/tv/icon57.png"            gap:platform="ios"        width="57" height="57" />
+    <icon src="imgs/tv/icon72.png"            gap:platform="ios"        width="72" height="72" />
+    <!--
     <icon src="imgs/tv/114x114.png"         gap:platform="ios"        width="114" height="114" />
     <icon src="imgs/tv/144x144.png"         gap:platform="ios"        width="144" height="144" />	
 	-->
 	
     <!-- Define app splash screen for each platform. -->
-    <gap:splash src="imgs/splashen.png" />
+    <gap:splash src="imgs/Default-568h@2x.png" />
 
 
     <!--
